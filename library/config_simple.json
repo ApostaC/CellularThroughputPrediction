@@ -1,0 +1,8 @@
+{
+  "DAG_file": "library/compiled.json",
+  "data_file": "training_data/trace1.json",
+  "session_key": "trace_id",
+  "time_key": "timestamp",
+  "batch_size": 300,
+  "output_dir": "library/output"
+}

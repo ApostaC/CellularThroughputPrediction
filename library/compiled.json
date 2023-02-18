@@ -1,0 +1,41 @@
+{
+  "JSONReader": {
+    "operation": "JSONReader",
+    "result_type": "json",
+    "upstream_ops": [],
+    "parameters": []
+  },
+  "op1": {
+    "operation": "JSONGet",
+    "result_type": "number",
+    "upstream_ops": [
+      "JSONReader"
+    ],
+    "parameters": [
+      "signal_strength"
+    ]
+  },
+  "op2": {
+    "operation": "AverageWithin",
+    "result_type": "number",
+    "upstream_ops": [
+      "op1"
+    ],
+    "parameters": [
+      3.0
+    ]
+  },
+  "result": {
+    "operation": "AverageWithin",
+    "result_type": "number",
+    "upstream_ops": [
+      "op1"
+    ],
+    "parameters": [
+      3.0
+    ]
+  },
+  "sink": [
+    "result"
+  ]
+}
