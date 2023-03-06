@@ -1,5 +1,10 @@
 # Project 2: Cellular Throughput Prediction
 
+## UPDATE: added new operators and traces
+New operator: `Divide` and `LatestEventToState` (see the updated documentation for details)
+
+New traces: can be found in the trace folder
+
 ## 1. Your Task
 
 <img width="420" alt="image" src="https://user-images.githubusercontent.com/25103655/219903829-cdb5560f-5182-47a8-8bbb-84963c471b57.png">
