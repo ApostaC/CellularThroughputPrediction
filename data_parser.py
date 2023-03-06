@@ -81,6 +81,10 @@ class Timeline:
         return Timeline("MultiplyConst", self.result_type, 
                         upstream_ops=[self.operator_id], 
                         parameters=[float(value)], operator_id = self.parent.get_new_id(), parser = self.parent)
+
+    def divide(self, other:Timeline) -> Timeline:
+        return Timeline("Divide", self.result_type, 
+                        [self.operator_id, other.operator_id], [], self.parent.get_new_id(), self.parent)
     
     def hasDataWithin(self, window_len) -> Timeline:
         tmp1 = self._to_true()
@@ -89,6 +93,9 @@ class Timeline:
     
     def shift(self, left) -> Timeline:
         return Timeline("Lookahead", self.result_type, [self.operator_id], [float(left)], self.parent.get_new_id(), self.parent)
+
+    def latestEventToState(self) -> Timeline:
+        return Timeline("LatestEventToState", self.result_type, [self.operator_id], [], self.parent.get_new_id(), self.parent)
      
     def calculate(self):
         dag_json = self.parent.build(self)
